@@ -7,3 +7,5 @@ class CreateContact extends Component {
     );
   }
 }
+
+export default CreateContact;
