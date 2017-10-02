@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import ListContacts from './ListContacts';
+import CreateContact from './CreateContact';
 import * as ContactsAPI from './utils/ContactsAPI';
 
 //https://github.com/udacity/reactnd-contacts-complete/tree/master/src
 
 class App extends Component {
   state = {
+    screen: 'create', //list, create
     contacts: [],
   }
   
   //é invocado após o componente estar montado
   componentDidMount() {
     ContactsAPI.getAll().then ((contacts) => {
-      this.setState({contacts})
+      this.setState({ contacts })
     });
   }
 
@@ -27,7 +29,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ListContacts onDeleteContact={this.removeContact} contacts={this.state.contacts} />
+        {this.state.screen === 'list' && (
+          <ListContacts 
+            onDeleteContact={this.removeContact} 
+            contacts={this.state.contacts} 
+          />
+        )}
+        {this.state.screen === 'create' && (
+          <CreateContact />
+        )}
       </div>
     );
   }
