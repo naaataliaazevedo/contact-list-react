@@ -7,7 +7,8 @@ import * as ContactsAPI from './utils/ContactsAPI';
 
 class App extends Component {
   state = {
-    screen: 'list', //list, create
+    screen: 'create', // list, create
+    screen: 'list', // list, create
     contacts: [],
   }
   
@@ -26,7 +27,8 @@ class App extends Component {
     ContactsAPI.remove(contact)
   }
 
-  //short-circuit  {this.state.screen === 'list' && (<ListContact />)}
+  // short-circuit  {this.state.screen === 'list' && (<ListContact />)}
+  // usando state pra fazer o Create, não deixa você voltar na página anterior. Portanto, devemos usar o React Router.
   render() {
     return (
       <div className="App">
@@ -34,6 +36,9 @@ class App extends Component {
           <ListContacts 
             contacts={this.state.contacts}
             onDeleteContact={this.removeContact} 
+            onNavigate={() => {
+              this.setState({ screen:'create' })
+            }}
           />
         )}
         {this.state.screen === 'create' && (
