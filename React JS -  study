@@ -1,0 +1,107 @@
+Criando elementos e JSX
+
+React.createElement (/*type*/, /*props*/, /*content*/);
+
+type - uma string ou um componente React
+ex: span, div ou um componenet criado com jsx.
+
+props- null ou um objeto
+
+content - null, uma string, um elemento de React ou um componente de React.
+
+
+O .createElement() retorna um elemento Root
+
+const element = React.createElement('div', null, 
+	React.createElement('strong', null, 'Hello World')
+);
+
+
+Criando um projeto com React-app
+
+npm install -g create-react-app
+create-react-app contacts
+
+INSTALAÇÃO
+
+react, react dom e react-scripts
+
+dentro do react-scrips vem o babel, webpack e webpack-dev-server
+
+
+Composição com componentes
+
+o componente é dividido em partes e cada parte é responsável por fazer 1 coisa específica.
+
+
+
+
+GERENCIAMENTO DE ESTADOS
+
+Pops, faz você passar dados para o componente
+Funcional components - forma mais intuitiva de desenvolver os componentes
+Controlled components - para que você conecte os formulários do seu aplicativo ao estado do componente
+
+
+O servidor é apenas um aplicativo Node/Express simples. O repositório do projeto está em https://github.com/udacity/reactnd-contacts-server. Tudo o que você precisa fazer é:
+ps: instalar na pasta fora da principal.
+
+clonar o projeto com git clone https://github.com/udacity/reactnd-contacts-server.git
+instalar as dependências do projeto com **npm install
+iniciar o servidor com **node server.js
+
+
+Construir estado fora do constructor(), significa que ele é um campo de classe.
+
+class User extends React.Component {
+  state = {
+    username: 'Tyler'
+  } 
+}
+
+
+class User extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: 'Tyler'
+    }
+  }
+}
+
+Como atualizar os estados
+
+usar this.setState, podendo ser construído de duas formas:
+
+// primeiro argumento, é o estado anterior, que é usado qndo precisamos do estado anterior.
+this.setState((prevState) => ({
+	count: prevState.count + 1
+}))
+
+// é um objeto que já é passado o novo estado, usamos qndo não precisamos do estado anterior.
+this.setState({
+	username: 'Tyler'
+})
+
+
+PropTypes
+
+npm install --save prop-types
+
+Permite que indiquemos se nossa variável é um, obj, array ou string.. evitando erros nas funções ou na utilização da props.
+
+dentro do meu componente, eu exijo que essas varíaveis sejam aquilo e se são requeridas ou não.
+
+ListContacts.PropTypes = {
+  contacts: PropTypes.array.isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
+}
+
+
+pacotes para filtrar
+
+escape-string-regexp
+sort-by
+
+
+

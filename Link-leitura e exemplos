@@ -1,0 +1,63 @@
+https://facebook.github.io/react/docs/components-and-props.html
+https://reactjs.org/docs/thinking-in-react.html#step-4-identify-where-your-state-should-live
+https://reactjs.org/docs/state-and-lifecycle.html
+https://www.npmjs.com/package/prop-types
+https://reactjs.org/docs/typechecking-with-proptypes.html
+https://www.reactenlightenment.com/react-state/8.4.html
+https://tylermcginnis.com/functional-components-vs-stateless-functional-components-vs-stateless-components/
+https://reactjs.org/docs/forms.html
+https://reactjs.org/docs/thinking-in-react.html
+https://reactjs.org/docs/react-component.html#the-component-lifecycle
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Short-circuit_evaluation
+https://github.com/reacttraining/history
+
+//Links
+https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/modules/Link.js
+https://reacttraining.com/react-router/web/api/Link
+http://knowbody.github.io/react-router-docs/api/Link.html
+
+DADOS DENTRO DE API
+componentDidMount() //assim que o componente é adicionado no DOM
+Example: Vai pegar oq foi pedido e depois de pegar tudo, ele vai rederizar o elemento
+componentDidMount() {
+	fetchUser().then(user => this.setState({
+		name: user.name,
+		age: user.age
+	}))
+}
+
+Eventos de ciclo de vida (Lifecycle Events)
+Lifecycle events, ou eventos de ciclo de vida, são métodos pré-definidos para um componente. Esses métodos são automaticamente ligados à instância de um componente, e o React os chamará naturalmente em momentos específicos durante o ciclo de vida do componente. Existem diversos eventos de ciclo de vida, mas aqui estão os mais utilizados.
+
+componentWillMount()
+invocado imediatamente antes do componente ser inserido no DOM
+
+componentDidMount()
+invocado imediatamente depois do componente ser inserido no DOM
+
+componentWillUnmount()
+invocado imediatamente antes do componente ser removido do DOM
+
+componentWillReceiveProps()
+invocado sempre que o componente está prestes a receber novas props
+
+
+ADICIONANDO AO DOM
+Estes eventos são chamados quando um componente está sendo adicionado ao DOM:
+
+constructor()
+componentWillMount()
+render()
+componentDidMount()
+Renderizando novamente
+Estes eventos são chamados quando um componente é atualizado (renderizado novamente) no DOM:
+
+componentWillReceiveProps()
+shouldComponentUpdate()
+componentWillUpdate()
+render()
+componentDidUpdate()
+Removendo do DOM
+Este evento é chamado quando um componente está sendo removido do DOM:
+
+componentWillUnmount()
