@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import escapeRegExp from 'escape-string-regexp';
 import sortBy from 'sort-by';
 
-
 class ListContacts extends Component {
   static propTypes = {
     contacts: PropTypes.array.isRequired,
@@ -61,7 +60,7 @@ class ListContacts extends Component {
         </div>
 
         {showingContacts.length !== contacts.length &&
-          <div className="showing=contacts">
+          <div className="showing-contacts">
             <span>Now showing {showingContacts.length} of {contacts.length}</span>
             <button onClick={this.clearQuery}>Show all</button>
           </div>
@@ -87,6 +86,5 @@ class ListContacts extends Component {
     );
   }
 }
-
 
 export default ListContacts;
