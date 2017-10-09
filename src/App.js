@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ListContacts from './ListContacts';
+import { Route } from 'react-router-dom'
+import ListContacts from './ListContacts;';
 import CreateContact from './CreateContact';
 import * as ContactsAPI from './utils/ContactsAPI';
 
@@ -7,8 +8,6 @@ import * as ContactsAPI from './utils/ContactsAPI';
 
 class App extends Component {
   state = {
-    screen: 'create', // list, create
-    screen: 'list', // list, create
     contacts: [],
   }
   
@@ -27,23 +26,33 @@ class App extends Component {
     ContactsAPI.remove(contact)
   }
 
+  //pega o contato do servidor, concatena com o novo contato e retorna uma nova lista [array] de contatos
+  createContact(contact) {
+    ContactsAPI.create(contact).then(contact => {
+      this.setState(state => ({
+        contacts: state.contacts.concat([contact])
+      }))
+    })
+  }
   // short-circuit  {this.state.screen === 'list' && (<ListContact />)}
   // usando state pra fazer o Create, não deixa você voltar na página anterior. Portanto, devemos usar o React Router.
   render() {
     return (
       <div className="App">
-        {this.state.screen === 'list' && (
+        <Route exact path="/" render={() => (
           <ListContacts 
             contacts={this.state.contacts}
             onDeleteContact={this.removeContact} 
-            onNavigate={() => {
-              this.setState({ screen:'create' })
+          />
+        )} />
+        <Route path="/create" render={({ history }) => (
+          <CreateContact
+            onCreateContact={(contact) => {
+              this.createContact(contact)
+              history.push('/')
             }}
           />
-        )}
-        {this.state.screen === 'create' && (
-          <CreateContact />
-        )}
+        )} /> 
       </div>
     );
   }

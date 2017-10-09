@@ -16,6 +16,34 @@ https://github.com/ReactTraining/react-router/blob/master/packages/react-router-
 https://reacttraining.com/react-router/web/api/Link
 http://knowbody.github.io/react-router-docs/api/Link.html
 
+//Serialize form 
+https://www.npmjs.com/package/form-serialize
+
+//React router
+https://tylermcginnis.com/build-your-own-react-router-v4/
+https://tylermcginnis.com/courses
+
+//LER E SEGUIR
+https://reactjs.org/docs/hello-world.html 
+https://tylermcginnis.com/
+https://react-brasil-slack.herokuapp.com/
+https://www.reactiflux.com/
+https://tylermcginnis.com/react-elements-vs-react-components/
+https://camjackson.net/post/9-things-every-reactjs-beginner-should-know
+https://tylermcginnis.com/react-aha-moments/
+https://medium.com/@dan_abramov/youre-missing-the-point-of-react-a20e34a51e1a
+
+//PROJETO minha estante de livros
+https://review.udacity.com/#!/rubrics/1093/view
+http://udacity.github.io/frontend-nanodegree-styleguide/index.html
+http://udacity.github.io/frontend-nanodegree-styleguide/css.html
+http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html	
+https://udacity.github.io/git-styleguide/
+https://udacity.github.io/git-styleguide/
+//clone https://github.com/udacity/reactnd-project-myreads-starter
+
+
+
 DADOS DENTRO DE API
 componentDidMount() //assim que o componente é adicionado no DOM
 Example: Vai pegar oq foi pedido e depois de pegar tudo, ele vai rederizar o elemento
